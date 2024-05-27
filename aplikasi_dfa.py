@@ -41,9 +41,9 @@ class VisualDFA:
         current_state = self.initial_state
         for symbol in input_str:
             if symbol not in self.input_symbols:
-                return False  # Input symbol not valid
+                return False  
             if current_state not in self.transitions or symbol not in self.transitions[current_state]:
-                return False  # No transition for the current state and input symbol
+                return False 
             current_state = self.transitions[current_state][symbol]
         return current_state in self.final_states
 
